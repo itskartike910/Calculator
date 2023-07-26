@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BMI Calculator</string>
+    <string name="enter_the_length_in_cm">Enter the length in cm</string>
+</resources>
