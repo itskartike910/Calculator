@@ -2,10 +2,11 @@
     <string name="app_name">Calculator</string>
     <string name="calculator">CALCULATOR📱</string>
     <string name="line">------------------------------------------------</string>
-    <string name="normal_calculator">Normal Calculator ➡️</string>
-    <string name="decimal_to_binary">Numeral Convertor➡️</string>
-    <string name="bmi_calculator">BMI Calculator      ➡️</string>
-    <string name="discount_calculator">Discount Calculator➡️</string>
-    <string name="currency_convertor">Currency Convertor➡️</string>
+    <string name="normal_calculator">Simple Calculator</string>
+    <string name="decimal_to_binary">Numeral Convertor</string>
+    <string name="bmi_calculator">BMI Calculator</string>
+    <string name="discount_calculator">Discount Calculator</string>
+    <string name="currency_convertor">Currency Convertor</string>
     <string name="made_with_by_kartik_kumar">Made with ❤ by Kartik Kumar</string>
+    <string name="scientific_calculator">Scientific Calculator</string>
 </resources>

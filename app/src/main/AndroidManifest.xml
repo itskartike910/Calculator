@@ -60,7 +60,7 @@
         <activity
             android:name=".Normal"
             android:exported="false"
-            android:label="Normal Calculator"
+            android:label="Simple Calculator"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.app.lib_name"

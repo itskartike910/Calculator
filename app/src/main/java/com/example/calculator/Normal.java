@@ -10,119 +10,99 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Normal extends AppCompatActivity {
-
-    private AppBarConfiguration appBarConfiguration;
-    private ActivityMainBinding binding;
     public EditText e1, e2;
-    TextView t1;
+    public TextView t1;
+    public Button b1, b2, b3, b4, b5, b6, b7;
     int num1, num2;
 
     public boolean getNumbers() {
-
-        //checkAndClear();
-        // defining the edit text 1 to e1
-        e1 = (EditText) findViewById(R.id.num1);
-
-        // defining the edit text 2 to e2
-        e2 = (EditText) findViewById(R.id.num2);
-
-        // defining the text view to t1
+        e1 = (EditText) findViewById(R.id.editTextNumber8);
+        e2 = (EditText) findViewById(R.id.editTextNumber10);
         t1 = (TextView) findViewById(R.id.result);
 
         // taking input from text box 1
         String s1 = e1.getText().toString();
-
         // taking input from text box 2
         String s2 = e2.getText().toString();
 
-
-
-        if(s1.equals("Please enter value 1") && s2.equals(null))
-        {
-            String result = "Please enter value 2";
+        if (s1.equals(null) && s2.equals(null)) {
+            String r1  ="Please Enter The Value 1" ;
+            String r2  ="Please Enter The Value 2" ;
+            e1.setText(r1);
+            e2.setText(r2);
+            return false;
+        }
+        if (s1.equals(null) && !s2.equals(null)) {
+            String result = "Please Enter The Value 1";
+            e1.setText(result);
+            return false;
+        }if (!s1.equals(null) && s2.equals(null)) {
+            String result = "Please Enter The Value 2";
             e2.setText(result);
             return false;
         }
-        if(s1.equals(null) && s2.equals("Please enter value 2"))
-        {
-            String result = "Please enter value 1";
-            e1.setText(result);
+        if (s1.equals("Please Enter The Value 1") || s2.equals("Please Enter The Value 2")) {
             return false;
         }
-        if(s1.equals("Please enter value 1") || s2.equals("Please enter value 2"))
-        {
-            return false;
-        }
-
-        if((!s1.equals(null) && s2.equals(null))|| (!s1.equals("") && s2.equals("")) ){
-
-            String result = "Please enter value 2";
-
+        if ((!s1.equals(null) && s2.equals(null)) || (!s1.equals("") && s2.equals(""))) {
+            String result = "Please Enter The Value 2";
             e2.setText(result);
             return false;
         }
-        if((s1.equals(null) && !s2.equals(null))|| (s1.equals("") && !s2.equals("")) ){
+        if ((s1.equals(null) && !s2.equals(null)) || (s1.equals("") && !s2.equals(""))) {
             //checkAndClear();
-            String result = "Please enter value 1";
+            String result = "Please Enter The Value 1";
             e1.setText(result);
             return false;
         }
-        if((s1.equals(null) && s2.equals(null))|| (s1.equals("") && s2.equals("")) ){
+        if ((s1.equals(null) && s2.equals(null)) || (s1.equals("") && s2.equals(""))) {
             //checkAndClear();
-            String result1 = "Please enter value 1";
+            String result1 = "Please Enter The Value 1";
             e1.setText(result1);
-            String result2 = "Please enter value 2";
+            String result2 = "Please Enter The Value 2";
             e2.setText(result2);
             return false;
         }
-
-        else {
             // converting string to int.
-            num1 = Integer.parseInt(s1);
-
+        num1 = Integer.parseInt(s1);
             // converting string to int.
-            num2 = Integer.parseInt(s2);
-
-
-        }
-
+        num2 = Integer.parseInt(s2);
         return true;
     }
 
     public void doSum(View v) {
-
         // get the input numbers
         if (getNumbers()) {
             int sum = num1 + num2;
+            Toast.makeText(Normal.this, "Your Addition has been calculated...", Toast.LENGTH_SHORT).show();
             t1.setText(Integer.toString(sum));
+        } else {
+            Toast.makeText(Normal.this, "Please Enter The Required Fields...", Toast.LENGTH_SHORT).show();
+            t1.setText("Error! Please enter Required Values");
         }
-        else
-        {
-            t1.setText("Error Please enter Required Values");
-        }
-
     }
-    public void clearTextNum1(View v) {
 
+    public void clearTextNum1(View v) {
         // get the input numbers
         e1.getText().clear();
     }
-    public void clearTextNum2(View v) {
 
+    public void clearTextNum2(View v) {
         // get the input numbers
         e2.getText().clear();
     }
+
     public void doPow(View v) {
 
         //checkAndClear();
         // get the input numbers
         if (getNumbers()) {
             double sum = Math.pow(num1, num2);
+            Toast.makeText(Normal.this, "Your Pow(A^B) has been calculated...", Toast.LENGTH_SHORT).show();
             t1.setText(Double.toString(sum));
-        }
-        else
-        {
-            t1.setText("Error Please enter Required Values");
+        } else {
+            Toast.makeText(Normal.this, "Please Enter The Required Fields...", Toast.LENGTH_SHORT).show();
+            t1.setText("Error! Please enter Required Values");
         }
     }
 
@@ -132,11 +112,11 @@ public class Normal extends AppCompatActivity {
         // get the input numbers
         if (getNumbers()) {
             int sum = num1 - num2;
+            Toast.makeText(Normal.this, "Your Subtraction has been calculated...", Toast.LENGTH_SHORT).show();
             t1.setText(Integer.toString(sum));
-        }
-        else
-        {
-            t1.setText("Error Please enter Required Values");
+        } else {
+            Toast.makeText(Normal.this, "Please Enter The Required Fields...", Toast.LENGTH_SHORT).show();
+            t1.setText("Error! Please enter Required Values");
         }
     }
 
@@ -146,11 +126,11 @@ public class Normal extends AppCompatActivity {
         // get the input numbers
         if (getNumbers()) {
             int sum = num1 * num2;
+            Toast.makeText(Normal.this, "Your Multiplication has been calculated...", Toast.LENGTH_SHORT).show();
             t1.setText(Integer.toString(sum));
-        }
-        else
-        {
-            t1.setText("Error Please enter Required Values");
+        } else {
+            Toast.makeText(Normal.this, "Please Enter The Required Fields...", Toast.LENGTH_SHORT).show();
+            t1.setText("Error! Please enter Required Values");
         }
     }
 
@@ -159,14 +139,19 @@ public class Normal extends AppCompatActivity {
         //checkAndClear();
         // get the input numbers
         if (getNumbers()) {
-
             // displaying the text in text view assigned as t1
-            double sum = num1 / (num2 * 1.0);
-            t1.setText(Double.toString(sum));
-        }
-        else
-        {
-            t1.setText("Error Please enter Required Values");
+            Toast.makeText(Normal.this, "Your Division has been calculated...", Toast.LENGTH_SHORT).show();
+            if(num2==0){
+                String s = "Undefined";
+                t1.setText(s);
+            }
+            else{
+                double sum = num1 / (num2 * 1.0);
+                t1.setText(Double.toString(sum));
+            }
+        } else {
+            Toast.makeText(Normal.this, "Please Enter The Required Fields...", Toast.LENGTH_SHORT).show();
+            t1.setText("Error! Please enter Required Values");
         }
     }
 
@@ -176,11 +161,26 @@ public class Normal extends AppCompatActivity {
         // get the input numbers
         if (getNumbers()) {
             double sum = num1 % num2;
+            Toast.makeText(Normal.this, "Your Modulus has been calculated...", Toast.LENGTH_SHORT).show();
             t1.setText(Double.toString(sum));
+        } else {
+            Toast.makeText(Normal.this, "Please Enter The Required Fields...", Toast.LENGTH_SHORT).show();
+            t1.setText("Error! Please enter Required Values");
         }
-        else
-        {
-            t1.setText("Error Please enter Required Values");
+    }
+
+    public void doRootPow(View v){
+        if(getNumbers()){
+            if(num2!=0){
+                Toast.makeText(Normal.this, "Your RootPow(A^1/B) has been calculated...", Toast.LENGTH_SHORT).show();
+                int x = 1/num2;
+                double sum = Math.pow(num1,x);
+                t1.setText(Double.toString(sum));
+            }
+            else{
+                Toast.makeText(Normal.this, "Please Enter The Required Fields...", Toast.LENGTH_SHORT).show();
+                t1.setText("Error! Please enter Required Values");
+            }
         }
     }
 
@@ -188,38 +188,64 @@ public class Normal extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        e1 = (EditText) findViewById(R.id.num1);
-        // defining the edit text 2 to e2
-        e2 = (EditText) findViewById(R.id.num2);
-    }
+        setContentView(R.layout.activity_normal);
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+        e1 = (EditText) findViewById(R.id.editTextNumber8);
+        e2 = (EditText) findViewById(R.id.editTextNumber10);
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        t1 = (TextView) findViewById(R.id.result);
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        b1 = (Button) findViewById(R.id.buttons9);
+        b2 = (Button) findViewById(R.id.buttons6);
+        b3 = (Button) findViewById(R.id.buttons8);
+        b4 = (Button) findViewById(R.id.buttons7);
+        b5 = (Button) findViewById(R.id.buttons5);
+        b6 = (Button) findViewById(R.id.buttons12);
+        b7 = (Button) findViewById(R.id.buttons11);
 
-        return super.onOptionsItemSelected(item);
-    }
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                doSum(view);
+            }
+        });
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                doSub(view);
+            }
+        });
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                doMul(view);
+            }
+        });
+        b4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                doDiv(view);
+            }
+        });
+        b5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                doPow(view);
+            }
+        });
+        b6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                doMod(view);
+            }
+        });
+        b7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                doRootPow(view);
+            }
+        });
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        return NavigationUI.navigateUp(navController, appBarConfiguration)
-                || super.onSupportNavigateUp();
+
     }
 }
