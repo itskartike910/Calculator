@@ -8,8 +8,9 @@
 
     <TextView
         android:id="@+id/textView26"
-        android:layout_width="209dp"
-        android:layout_height="45dp"
+        android:layout_width="258dp"
+        android:layout_height="59dp"
+        android:hint="Result"
         android:text=""
         android:textColor="#02FFA7"
         android:textSize="15sp"
@@ -22,8 +23,9 @@
 
     <TextView
         android:id="@+id/textView24"
-        android:layout_width="201dp"
-        android:layout_height="39dp"
+        android:layout_width="259dp"
+        android:layout_height="60dp"
+        android:hint="Result"
         android:text=""
         android:textColor="#02FFA7"
         android:textSize="15sp"
